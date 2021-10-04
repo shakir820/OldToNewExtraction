@@ -1,0 +1,35 @@
+<div class="alert m-4" *ngIf="showAlert"
+[ngClass]="{'alert-success': operaion_result == true, 'alert-danger': operaion_result == false}" role="alert">
+  Operation Successful!
+</div>
+
+
+
+<div class="card" style="width: 18rem;">
+
+  <div class="card-body">
+    <h5 class="card-title">Extract Images</h5>
+    <p class="card-text">Extract your old images quickly with our newly invented feature to store them in a new table</p>
+    <div class=" d-flex">
+      <button (click)="onExtractClicked()" [disabled]="extracting" class="btn btn-primary">Extract</button>
+      <div class="spinner-border text-primary" *ngIf="extracting" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="card mt-4" style="width: 18rem;">
+
+  <div class="card-body">
+    <h5 class="card-title">Delete Images</h5>
+    <p class="card-text">Delete your all extracted images from the database and also from the local storage</p>
+    <div class="d-flex">
+      <button (click)="onDeleteClicked()" [disabled]="deleting" class="btn btn-primary">Delete</button>
+    <div class="spinner-border text-primary ml-3" *ngIf="deleting" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    </div>
+  </div>
+</div>
